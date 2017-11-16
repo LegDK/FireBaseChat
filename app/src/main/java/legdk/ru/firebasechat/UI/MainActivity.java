@@ -50,25 +50,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bindButterKnife();
-        setAuthInstance();
-        setUsersDatabase();
+        ButterKnife.bind(this);
+        auth = FirebaseAuth.getInstance();
+        userRefDatabase = FirebaseDatabase.getInstance().getReference().child("users");
         setUserRecyclerView();
-        setUsersKeyList();
+        usersKeyList = new ArrayList<String>();
         setAuthListener();
     }
 
-    private void bindButterKnife() {
-        ButterKnife.bind(this);
-    }
 
-    private void setAuthInstance() {
-        auth = FirebaseAuth.getInstance();
-    }
 
-    private void setUsersDatabase() {
-        userRefDatabase = FirebaseDatabase.getInstance().getReference().child("users");
-    }
     private void setUserRecyclerView() {
         usersChatAdapter = new UsersChatAdapter(this, new ArrayList<User>());
         usersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -76,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
         usersRecyclerView.setAdapter(usersChatAdapter);
     }
 
-    private void setUsersKeyList() {
-        usersKeyList = new ArrayList<String>();
-    }
 
     private void setAuthListener() {
         authListener = new FirebaseAuth.AuthStateListener() {
