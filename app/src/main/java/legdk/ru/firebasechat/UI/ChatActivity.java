@@ -134,7 +134,6 @@ public class ChatActivity extends Activity {
 
             ChatMessage newMessage = new ChatMessage(senderMessage,currentUserId,recipientId);
             messageChatDatabase.push().setValue(newMessage);
-
             userMessageChatText.setText("");
         }
     }
