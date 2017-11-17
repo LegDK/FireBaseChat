@@ -27,8 +27,8 @@ public class ChatActivity extends Activity {
 
     private static final String TAG = ChatActivity.class.getSimpleName();
 
-    @BindView(R.id.recycler_view_chat) RecyclerView mChatRecyclerView;
-    @BindView(R.id.edit_text_message) EditText mUserMessageChatText;
+    @BindView(R.id.recycler_view_chat) RecyclerView chatRecyclerView;
+    @BindView(R.id.edit_text_message) EditText userMessageChatText;
 
 
     private String recipientId;
@@ -63,10 +63,10 @@ public class ChatActivity extends Activity {
     }
 
     private void setChatRecyclerView() {
-        mChatRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mChatRecyclerView.setHasFixedSize(true);
+        chatRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        chatRecyclerView.setHasFixedSize(true);
         messageChatAdapter = new MessageChatAdapter(new ArrayList<ChatMessage>());
-        mChatRecyclerView.setAdapter(messageChatAdapter);
+        chatRecyclerView.setAdapter(messageChatAdapter);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class ChatActivity extends Activity {
                         newMessage.setRecipientOrSenderStatus(MessageChatAdapter.RECIPIENT);
                     }
                     messageChatAdapter.refillAdapter(newMessage);
-                    mChatRecyclerView.scrollToPosition(messageChatAdapter.getItemCount()-1);
+                    chatRecyclerView.scrollToPosition(messageChatAdapter.getItemCount()-1);
                 }
 
             }
@@ -128,14 +128,14 @@ public class ChatActivity extends Activity {
     @OnClick(R.id.btn_send_message)
     public void btnSendMsgListener(View sendButton){
 
-        String senderMessage = mUserMessageChatText.getText().toString().trim();
+        String senderMessage = userMessageChatText.getText().toString().trim();
 
         if(!senderMessage.isEmpty()){
 
             ChatMessage newMessage = new ChatMessage(senderMessage,currentUserId,recipientId);
             messageChatDatabase.push().setValue(newMessage);
 
-            mUserMessageChatText.setText("");
+            userMessageChatText.setText("");
         }
     }
 

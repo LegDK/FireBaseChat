@@ -8,7 +8,7 @@ public class ChatMessage {
     private String sender;
     private String recipient;
 
-    private int mRecipientOrSenderStatus;
+    private int recipientOrSenderStatus;
 
     public ChatMessage() {
     }
@@ -21,7 +21,7 @@ public class ChatMessage {
 
 
     public void setRecipientOrSenderStatus(int recipientOrSenderStatus) {
-        this.mRecipientOrSenderStatus = recipientOrSenderStatus;
+        this.recipientOrSenderStatus = recipientOrSenderStatus;
     }
 
 
@@ -39,6 +39,6 @@ public class ChatMessage {
 
     @Exclude
     public int getRecipientOrSenderStatus() {
-        return mRecipientOrSenderStatus;
+        return recipientOrSenderStatus;
     }
 }

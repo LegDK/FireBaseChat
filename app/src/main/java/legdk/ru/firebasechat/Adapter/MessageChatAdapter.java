@@ -109,15 +109,15 @@ public class MessageChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public class ViewHolderSender extends RecyclerView.ViewHolder {
 
-        private TextView mSenderMessageTextView;
+        private TextView senderMessageTextView;
 
         public ViewHolderSender(View itemView) {
             super(itemView);
-            mSenderMessageTextView = (TextView) itemView.findViewById(R.id.text_view_sender_message);
+            senderMessageTextView = (TextView) itemView.findViewById(R.id.text_view_sender_message);
         }
 
         public TextView getSenderMessageTextView() {
-            return mSenderMessageTextView;
+            return senderMessageTextView;
         }
 
     }
@@ -126,15 +126,15 @@ public class MessageChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     /*ViewHolder for Recipient*/
     public class ViewHolderRecipient extends RecyclerView.ViewHolder {
 
-        private TextView mRecipientMessageTextView;
+        private TextView recipientMessageTextView;
 
         public ViewHolderRecipient(View itemView) {
             super(itemView);
-            mRecipientMessageTextView = (TextView) itemView.findViewById(R.id.text_view_recipient_message);
+            recipientMessageTextView = (TextView) itemView.findViewById(R.id.text_view_recipient_message);
         }
 
         public TextView getRecipientMessageTextView() {
-            return mRecipientMessageTextView;
+            return recipientMessageTextView;
         }
 
     }

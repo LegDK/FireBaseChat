@@ -12,7 +12,7 @@ public class User {
     private int avatarId;
     private long createdAt;
 
-    private String mRecipientId;
+    private String recipientId;
 
     public User() {
     }
@@ -68,10 +68,10 @@ public class User {
 
     @Exclude
     public String getRecipientId() {
-        return mRecipientId;
+        return recipientId;
     }
 
     public void setRecipientId(String recipientId) {
-        this.mRecipientId = recipientId;
+        this.recipientId = recipientId;
     }
 }
