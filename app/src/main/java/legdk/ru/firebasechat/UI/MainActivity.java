@@ -1,8 +1,8 @@
 package legdk.ru.firebasechat.UI;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,7 +29,7 @@ import legdk.ru.firebasechat.Login.LogInActivity;
 import legdk.ru.firebasechat.Models.User;
 import legdk.ru.firebasechat.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static String TAG =  MainActivity.class.getSimpleName();
 
