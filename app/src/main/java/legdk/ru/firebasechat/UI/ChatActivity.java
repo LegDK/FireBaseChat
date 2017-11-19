@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 
+import com.blakequ.rsa.FileEncryptionManager;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -131,7 +132,6 @@ public class ChatActivity extends Activity {
         String senderMessage = userMessageChatText.getText().toString().trim();
 
         if(!senderMessage.isEmpty()){
-
             ChatMessage newMessage = new ChatMessage(senderMessage,currentUserId,recipientId);
             messageChatDatabase.push().setValue(newMessage);
             userMessageChatText.setText("");

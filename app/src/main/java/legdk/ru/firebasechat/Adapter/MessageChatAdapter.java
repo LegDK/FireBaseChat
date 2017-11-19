@@ -89,7 +89,6 @@ public class MessageChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public void refillAdapter(ChatMessage newFireChatMessage) {
 
-
         chatList.add(newFireChatMessage);
 
 
