@@ -37,6 +37,10 @@ public class ChatMessage {
         return sender;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     @Exclude
     public int getRecipientOrSenderStatus() {
         return recipientOrSenderStatus;
